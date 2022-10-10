@@ -4,7 +4,7 @@
 
 # INFORMATION
 
-> To run the DSE guides. First, you need Visual Studio to run MVC Persona and Eclipse (Web) to N-Capas
+> To run the DSE guides. First, I used Visual Studio to run MVC Persona and MVC Pelicula. Furthermore, I used Eclipse (Web) to N-Capas
 
 # LICENSE
 
