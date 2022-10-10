@@ -1,0 +1,22 @@
+﻿@*@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+*@
+
+@{ 
+    ViewBag.Title = "Bienvenido";
+}
+<h2>Bienvenido</h2>
+
+<ul>
+    @for (int i = 1; i <= ViewBag.Numveces; i++)
+    {
+        if (ViewBag.IsEmpty != null)
+        {
+                <li>@ViewBag.Mensaje @if (i >= 1)
+                { @ViewBag.Sms @i}  </li>
+        }
+    }
+</ul>
+
+
