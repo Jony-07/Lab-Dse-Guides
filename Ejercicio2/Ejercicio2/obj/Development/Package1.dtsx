@@ -1,0 +1,652 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/31/2022 9:17:55 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-5DG2525"
+  DTS:CreatorName="DESKTOP-5DG2525\J-morales"
+  DTS:Description="DTS Wizard-generated package"
+  DTS:DTSID="{F51D55F1-3EC9-439D-918E-150D94D1E0C7}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.948.0"
+  DTS:LocaleID="3082"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="Package1"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{9C727E70-9AC9-4218-8BFA-221D006DCA28}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{38403C08-6277-4C7F-9D79-1AB27F39F4A9}"
+      DTS:ObjectName="DestinationConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;User ID=sa;Initial Catalog=Control_Ventas_E;Provider=SQLNCLI11;Auto Translate=false;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIlKDP05QSE+TU8KQYaFkAAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABoYWWi+9Vr9JOG8xo8mL7qEZJ/Mg2yMNnKqZnmu3gZgwAAAAAOgAAAAAIAACAAAAAguywMfMi1UdlWDeWR8gyqmvMRdcjGlOAaRQMAxnBl8BAAAAAwuIvlbLbFxqAtwvMwRwflQAAAAARdEjag8foqg0KCo8r4yuT5SsxX9vUUH7wMMR4+ydWe7v7zTVXxr9VWfqDa/GZMQTPQjVpb0dsnNw0VcarWDK8</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionExcel]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{411ABC45-ACAE-4974-B59B-D6492527B716}"
+      DTS:ObjectName="SourceConnectionExcel">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Jony Morales\Desktop\Control_Ventas.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{1196E852-A222-46A5-854A-16D2506038E4}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task 1\Destination - Query"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="Destination - Query"
+              usesDispositions="true"
+              validateExternalMetadata="False"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[Query]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Destination - Query.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Destination - Query.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Query.Inputs[Destination Input].Columns[PedidoID]"
+                      cachedDataType="r8"
+                      cachedName="PedidoID"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Query.Inputs[Destination Input].ExternalColumns[PedidoID]"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].Columns[PedidoID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Query.Inputs[Destination Input].Columns[Nombre_Tienda]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Nombre_Tienda"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Query.Inputs[Destination Input].ExternalColumns[Nombre_Tienda]"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].Columns[Nombre_Tienda]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Query.Inputs[Destination Input].Columns[Nombre_Territorio]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Nombre_Territorio"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Query.Inputs[Destination Input].ExternalColumns[Nombre_Territorio]"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].Columns[Nombre_Territorio]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Query.Inputs[Destination Input].Columns[Codigo_Pais]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Codigo_Pais"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Query.Inputs[Destination Input].ExternalColumns[Codigo_Pais]"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].Columns[Codigo_Pais]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Query.Inputs[Destination Input].Columns[Fecha_Pedido]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Fecha_Pedido"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Query.Inputs[Destination Input].ExternalColumns[Fecha_Pedido]"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].Columns[Fecha_Pedido]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Query.Inputs[Destination Input].Columns[Nombre_Producto]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Nombre_Producto"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Query.Inputs[Destination Input].ExternalColumns[Nombre_Producto]"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].Columns[Nombre_Producto]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Query.Inputs[Destination Input].Columns[Precio_Unitario]"
+                      cachedDataType="cy"
+                      cachedName="Precio_Unitario"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Query.Inputs[Destination Input].ExternalColumns[Precio_Unitario]"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].Columns[Precio_Unitario]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Query.Inputs[Destination Input].Columns[Descuento_PrecioUnitario]"
+                      cachedDataType="r8"
+                      cachedName="Descuento_PrecioUnitario"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Query.Inputs[Destination Input].ExternalColumns[Descuento_PrecioUnitario]"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].Columns[Descuento_PrecioUnitario]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Query.Inputs[Destination Input].Columns[Cantidad_Pedido]"
+                      cachedDataType="r8"
+                      cachedName="Cantidad_Pedido"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Query.Inputs[Destination Input].ExternalColumns[Cantidad_Pedido]"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].Columns[Cantidad_Pedido]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Query.Inputs[Destination Input].ExternalColumns[PedidoID]"
+                      dataType="r8"
+                      name="PedidoID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Query.Inputs[Destination Input].ExternalColumns[Nombre_Tienda]"
+                      dataType="wstr"
+                      length="255"
+                      name="Nombre_Tienda" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Query.Inputs[Destination Input].ExternalColumns[Nombre_Territorio]"
+                      dataType="wstr"
+                      length="255"
+                      name="Nombre_Territorio" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Query.Inputs[Destination Input].ExternalColumns[Codigo_Pais]"
+                      dataType="wstr"
+                      length="255"
+                      name="Codigo_Pais" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Query.Inputs[Destination Input].ExternalColumns[Fecha_Pedido]"
+                      dataType="wstr"
+                      length="255"
+                      name="Fecha_Pedido" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Query.Inputs[Destination Input].ExternalColumns[Nombre_Producto]"
+                      dataType="wstr"
+                      length="255"
+                      name="Nombre_Producto" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Query.Inputs[Destination Input].ExternalColumns[Precio_Unitario]"
+                      dataType="cy"
+                      name="Precio_Unitario" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Query.Inputs[Destination Input].ExternalColumns[Descuento_PrecioUnitario]"
+                      dataType="r8"
+                      name="Descuento_PrecioUnitario" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Query.Inputs[Destination Input].ExternalColumns[Cantidad_Pedido]"
+                      dataType="r8"
+                      name="Cantidad_Pedido" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Destination - Query.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\Data Flow Task 1\Destination - Query.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - Query.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - Query.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - Query.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - Query.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Source - Query"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Origen de Excel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Origen de Excel"
+              name="Source - Query"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT * FROM `Ventas$`</property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="La asignación de parámetros del comando SQL a variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Source - Query.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionExcel]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionExcel]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel]"
+                  name="Salida de origen de Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].Columns[PedidoID]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].ExternalColumns[PedidoID]"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].Columns[PedidoID]"
+                      name="PedidoID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].Columns[Nombre_Tienda]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].ExternalColumns[Nombre_Tienda]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].Columns[Nombre_Tienda]"
+                      name="Nombre_Tienda"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].Columns[Nombre_Territorio]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].ExternalColumns[Nombre_Territorio]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].Columns[Nombre_Territorio]"
+                      name="Nombre_Territorio"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].Columns[Codigo_Pais]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].ExternalColumns[Codigo_Pais]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].Columns[Codigo_Pais]"
+                      name="Codigo_Pais"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].Columns[Fecha_Pedido]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].ExternalColumns[Fecha_Pedido]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].Columns[Fecha_Pedido]"
+                      name="Fecha_Pedido"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].Columns[Nombre_Producto]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].ExternalColumns[Nombre_Producto]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].Columns[Nombre_Producto]"
+                      name="Nombre_Producto"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].Columns[Precio_Unitario]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].ExternalColumns[Precio_Unitario]"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].Columns[Precio_Unitario]"
+                      name="Precio_Unitario"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].Columns[Descuento_PrecioUnitario]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].ExternalColumns[Descuento_PrecioUnitario]"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].Columns[Descuento_PrecioUnitario]"
+                      name="Descuento_PrecioUnitario"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].Columns[Cantidad_Pedido]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].ExternalColumns[Cantidad_Pedido]"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].Columns[Cantidad_Pedido]"
+                      name="Cantidad_Pedido"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].ExternalColumns[PedidoID]"
+                      dataType="r8"
+                      name="PedidoID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].ExternalColumns[Nombre_Tienda]"
+                      dataType="wstr"
+                      length="255"
+                      name="Nombre_Tienda" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].ExternalColumns[Nombre_Territorio]"
+                      dataType="wstr"
+                      length="255"
+                      name="Nombre_Territorio" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].ExternalColumns[Codigo_Pais]"
+                      dataType="wstr"
+                      length="255"
+                      name="Codigo_Pais" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].ExternalColumns[Fecha_Pedido]"
+                      dataType="wstr"
+                      length="255"
+                      name="Fecha_Pedido" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].ExternalColumns[Nombre_Producto]"
+                      dataType="wstr"
+                      length="255"
+                      name="Nombre_Producto" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].ExternalColumns[Precio_Unitario]"
+                      dataType="cy"
+                      name="Precio_Unitario" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].ExternalColumns[Descuento_PrecioUnitario]"
+                      dataType="r8"
+                      name="Descuento_PrecioUnitario" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel].ExternalColumns[Cantidad_Pedido]"
+                      dataType="r8"
+                      name="Cantidad_Pedido" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de error de origen de Excel]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de error de origen de Excel].Columns[PedidoID]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de error de origen de Excel].Columns[PedidoID]"
+                      name="PedidoID" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de error de origen de Excel].Columns[Nombre_Tienda]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de error de origen de Excel].Columns[Nombre_Tienda]"
+                      name="Nombre_Tienda" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de error de origen de Excel].Columns[Nombre_Territorio]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de error de origen de Excel].Columns[Nombre_Territorio]"
+                      name="Nombre_Territorio" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de error de origen de Excel].Columns[Codigo_Pais]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de error de origen de Excel].Columns[Codigo_Pais]"
+                      name="Codigo_Pais" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de error de origen de Excel].Columns[Fecha_Pedido]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de error de origen de Excel].Columns[Fecha_Pedido]"
+                      name="Fecha_Pedido" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de error de origen de Excel].Columns[Nombre_Producto]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de error de origen de Excel].Columns[Nombre_Producto]"
+                      name="Nombre_Producto" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de error de origen de Excel].Columns[Precio_Unitario]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de error de origen de Excel].Columns[Precio_Unitario]"
+                      name="Precio_Unitario" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de error de origen de Excel].Columns[Descuento_PrecioUnitario]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de error de origen de Excel].Columns[Descuento_PrecioUnitario]"
+                      name="Descuento_PrecioUnitario" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de error de origen de Excel].Columns[Cantidad_Pedido]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de error de origen de Excel].Columns[Cantidad_Pedido]"
+                      name="Cantidad_Pedido" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de error de origen de Excel].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de error de origen de Excel].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de error de origen de Excel].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de error de origen de Excel].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task 1.Paths[Salida de origen de Excel]"
+              endId="Package\Data Flow Task 1\Destination - Query.Inputs[Destination Input]"
+              name="Salida de origen de Excel"
+              startId="Package\Data Flow Task 1\Source - Query.Outputs[Salida de origen de Excel]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Preparation SQL Task 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{6423010D-DCBA-4EE9-95C4-3093E6ACB7D9}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Preparation SQL Task 1"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{38403C08-6277-4C7F-9D79-1AB27F39F4A9}"
+          SQLTask:SqlStatementSource="CREATE TABLE [dbo].[Query] (&#xA;[PedidoID] float,&#xA;[Nombre_Tienda] nvarchar(255),&#xA;[Nombre_Territorio] nvarchar(255),&#xA;[Codigo_Pais] nvarchar(255),&#xA;[Fecha_Pedido] nvarchar(255),&#xA;[Nombre_Producto] nvarchar(255),&#xA;[Precio_Unitario] money,&#xA;[Descuento_PrecioUnitario] float,&#xA;[Cantidad_Pedido] float&#xA;)&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{46D0BBEB-1310-413F-B39B-696E6C5F6AF0\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{46D0BBEB-1310-413F-B39B-696E6C5F6AF0}"
+      DTS:From="Package\Preparation SQL Task 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{46D0BBEB-1310-413F-B39B-696E6C5F6AF0}"
+      DTS:To="Package\Data Flow Task 1" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Data Flow Task 1"
+          TopLeft="530.5,212.5" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Preparation SQL Task 1"
+          TopLeft="515.5,110.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{46D0BBEB-1310-413F-B39B-696E6C5F6AF0\}]"
+          TopLeft="610.5,152.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task 1">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Data Flow Task 1\Source - Query"
+          TopLeft="413,110.5" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Data Flow Task 1\Destination - Query"
+          TopLeft="402.5,212.5" />
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[Salida de origen de Excel]"
+          TopLeft="488,152.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
